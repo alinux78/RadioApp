@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/stationName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="6mm"
+        android:background="#5f98AFC7"
+        android:textColor="@android:color/holo_red_light"
+        android:text="Name" />
+    <!--<TextView-->
+        <!--android:id="@+id/tvHome"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="HomeTown" />-->
+</LinearLayout>
+

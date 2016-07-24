@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/music"
+    >
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:textSize="10mm"
+        android:background="#8f98AFC7"
+        android:textColor="@android:color/holo_red_light"
+        android:text="Large Text"
+        android:id="@+id/stationName"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0" />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/trackDetails"
+        android:layout_below="@id/stationName"
+        android:layout_weight="1" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trackDetails"
+        android:text=""
+        android:drawableBottom="@drawable/stop"
+        android:id="@+id/stop_button"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@android:color/transparent" />
+
+
+    </LinearLayout>
+

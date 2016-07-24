@@ -1,0 +1,8 @@
+
+
+-show the name of the station curently playing
+
+- show radio icon-
+- hadle pls
+- show track info
+
