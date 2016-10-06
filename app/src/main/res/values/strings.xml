@@ -9,4 +9,6 @@
     <string name="default_video">http://80.86.106.143:9128/rockfm.aacp</string>
     <string name="play_video">Play</string>
 
+    <string name="could_not_get_content">Could not get the content</string>
+
 </resources>
