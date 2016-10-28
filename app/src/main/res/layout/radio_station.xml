@@ -5,9 +5,11 @@
         android:id="@+id/stationName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="6mm"
-        android:background="#5f98AFC7"
-        android:textColor="#bfFF4500"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="italic"
+        android:textSize="7mm"
+        android:textColor="#ea6b0823"
+        android:background="#736b0823"
         android:text="Name" />
 </LinearLayout>
 
