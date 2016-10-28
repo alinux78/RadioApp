@@ -50,6 +50,8 @@ public class MainActivity extends ActionBarActivity {
         radioStations.add(new RadioStation("Rock FM", "http://www.rockfm.ro/rockfm.pls"));
         radioStations.add(new RadioStation("Radio Cafe", "http://live.radiocafe.ro:8048/listen.pls"));
         radioStations.add(new RadioStation("Magic FM", "http://www.magicfm.ro/listen.pls"));
+        radioStations.add(new RadioStation("Big Blue Swing", "http://209.236.126.18:8002/listen.pls"));
+
 
 
         ListView stationsList = (ListView) findViewById(R.id.stations_list);
