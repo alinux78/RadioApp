@@ -23,7 +23,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.Reader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
@@ -64,23 +68,27 @@ public class MainActivity extends ActionBarActivity {
         AsyncTask checkContentType = new AsyncTask() {
             @Override
             protected Object doInBackground(Object[] params) {
+                String urlToPlay = station.getUrl();
                 try {
-                    HttpClient httpClient = new DefaultHttpClient();
-                    HttpGet request = new HttpGet(station.getUrl());
-                    HttpResponse response = httpClient.execute(request);
-                    String contentType = response.getFirstHeader("Content-Type").getValue();
-                    if ( contentType.equals("audio/x-scpls") ) {
-                        //LineNumberReader reader = new LineNumberReader(new InputStreamReader(response.getEntity().getContent()));
-                        Properties prop = new Properties();
-                        prop.load(response.getEntity().getContent());
-                        return prop.get("File1");
+                    URL url = new URL(station.getUrl());
+                    URLConnection httpConnection = url.openConnection();
+                    Map<String, List<String>> headers = httpConnection.getHeaderFields();
+                    if (headers != null && headers.get("Content-Type") != null) {
+
+                        String contentType = headers.get("Content-Type").get(0);
+                        if (contentType.equals("audio/x-scpls")) {
+
+                            Properties prop = new Properties();
+                            prop.load(httpConnection.getInputStream());
+                            urlToPlay = prop.get("File1").toString();
+                        }
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    return null;
+                    urlToPlay = null;
                 }
 
-                return station.getUrl();
+                return urlToPlay;
             }
 
             @Override
